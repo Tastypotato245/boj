@@ -1,14 +1,24 @@
+// https://www.acmicpc.net/problem/
+
 #include <iostream>
+#include <algorithm>
+
 
 using namespace std;
 
-int	N;
+int	N = 0;
 
-void Input()
+void Input()
 {
-	int	i = 0;
-	cin >> N;
-	//while (++i <= N) cin >> Arr[i];
+	int i = 0;
+	cin >> N;
+}
+void Solve()
+{
+}
+
+void Output()
+{
 }
 
 int	main(void)
@@ -17,5 +27,8 @@ int	main(void)
 	cin.tie(NULL);
 	cout.tie(NULL);
 
+	Input();
+	Solve();
+	Output();
 	return (0);
 }
