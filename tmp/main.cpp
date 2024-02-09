@@ -3,7 +3,6 @@
 #include <iostream>
 #include <algorithm>
 
-
 using namespace std;
 
 int	N = 0;
@@ -13,6 +12,7 @@ void Input()
 	int i = 0;
 	cin >> N;
 }
+
 void Solve()
 {
 }
