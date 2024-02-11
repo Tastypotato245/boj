@@ -5,21 +5,23 @@
 
 using namespace std;
 
-int	N = 0;
+int	N;
+int K;
 
 void Input()
 {
-	int i = 0;
 	cin >> N;
+	cin >> K;
+}
+
+void Output()
+{
 }
 
 void Solve()
 {
 }
 
-void Output()
-{
-}
 
 int	main(void)
 {
