@@ -1,25 +1,30 @@
-// https://www.acmicpc.net/problem/
+// https://www.acmicpc.net/problem/2869
 
 #include <iostream>
 #include <algorithm>
 
 using namespace std;
 
-int	N;
-int K;
+int	A;
+int	B;
+int	V;
+int	cnt;
 
 void Input()
 {
-	cin >> N;
-	cin >> K;
-}
-
-void Output()
-{
+	cin >> A;
+	cin >> B;
+	cin >> V;
 }
 
 void Solve()
 {
+	int tmp = A - B;
+	V -= A;
+	cnt = V / tmp;
+	if (V % tmp != 0)
+		++cnt;
+	++cnt;
 }
 
 int	main(void)
@@ -30,6 +35,6 @@ int	main(void)
 
 	Input();
 	Solve();
-	Output();
+	cout << cnt << "\n";
 	return (0);
 }
