@@ -6,7 +6,7 @@
 #    By: kyusulee <kyusulee@student.42seoul.>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/08 15:15:06 by kyusulee          #+#    #+#              #
-#    Updated: 2024/02/09 20:40:44 by kyusulee         ###   ########.fr        #
+#    Updated: 2024/02/13 17:35:48 by kyusulee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,4 +33,4 @@ re		:
 	@$(MAKE) fclean
 	@$(MAKE) all
 
-.PHONY: all clean re test
+.PHONY: all fclean re test
