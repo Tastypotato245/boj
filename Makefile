@@ -18,21 +18,31 @@ CPP		=	c++
 CPPFLAG	=	-std=c++11
 RM		=	rm -f
 CLEAR	=	clear
+CP		=	cp tmp/main.cpp .
+MKDIR	=	mkdir $(D)
+MV		=	mv main.cpp $(D)
 
 all		:
-	@$(CPP) $(CPPFLAG) $(SRCS) -o $(NAME)
+			@$(CPP) $(CPPFLAG) $(SRCS) -o $(NAME)
 
 fclean	:
-	@$(RM) $(NAME)
+			@$(RM) $(NAME)
 
 test	:
-	@$(MAKE) all
-	@$(CLEAR)
-	@./$(NAME)
-	@$(MAKE) fclean
+			@$(MAKE) all
+			@$(CLEAR)
+			@./$(NAME)
+			@$(MAKE) fclean
 
 re		:
-	@$(MAKE) fclean
-	@$(MAKE) all
+			@$(MAKE) fclean
+			@$(MAKE) all
 
-.PHONY: all fclean re test
+new		:
+			@$(CP)
+			@$(MKDIR)
+
+go		:
+			@$(MV)
+
+.PHONY: all fclean re test new go
