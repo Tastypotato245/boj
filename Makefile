@@ -17,6 +17,7 @@ SRCS	=	main.cpp
 CPP		=	c++
 CPPFLAG	=	-std=c++11
 RM		=	rm -f
+CLEAR	=	clear
 
 all		:
 	@$(CPP) $(CPPFLAG) $(SRCS) -o $(NAME)
@@ -26,6 +27,7 @@ fclean	:
 
 test	:
 	@$(MAKE) all
+	@$(CLEAR)
 	@./$(NAME)
 	@$(MAKE) fclean
 
