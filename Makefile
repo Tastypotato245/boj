@@ -17,7 +17,6 @@ SRCS	=	main.cpp
 CPP		=	c++
 CPPFLAG	=	-std=c++11
 RM		=	rm -f
-CLEAR	=	clear
 CP		=	cp tmp/main.cpp .
 MKDIR	=	mkdir $(D)
 MV		=	mv main.cpp $(D)
@@ -30,7 +29,6 @@ fclean	:
 
 test	:
 			@$(MAKE) all
-			@$(CLEAR)
 			@./$(NAME)
 			@$(MAKE) fclean
 
