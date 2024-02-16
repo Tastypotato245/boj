@@ -17,14 +17,11 @@ void Solve()
 	cin >> K;
 	for (int i = 0 ; i < N ; ++i)
 		cin >> coins[i];
-	for (int i = 0 ; i <= K ; ++i)
-		for (int j = 0; j < N ; ++j)
-		{
-			if (i == 0)
-				dp[i + coins[j]] = 1;
-			else if (i + coins[j] <= K)
-				dp[i + coins[j]] += dp[i];
-		}
+	dp[0] = 1;
+	for (int i = 0 ; i < N ; ++i)
+		for (int j = 1; j <= K ; ++j)
+			if (j - coins[i] >= 0)
+				dp[j] += dp[j - coins[i]];
 	cout << dp[K] << "\n";
 }
 
