@@ -8,28 +8,23 @@ using namespace std;
 
 int	N;
 int	M;
+int arr[100001];
 
 void Solve()
 {
 	int tmp;
+	int a, b;
 
 	cin >> N >> M;
-	int arr[N][N];
-	for (int i = 0 ; i < N ; ++i)
+	for (int i = 1 ; i <= N ; ++i)
 	{
 		cin >> tmp;
-		for (int j = 0 ; j < i ; ++j)
-		{
-			arr[i][j] = tmp;
-		}
+		arr[i] = arr[i - 1] + tmp;
 	}
 	for (int i = 0 ; i < M ; ++i)
 	{
-		int a, b, ans = 0;
 		cin >> a >> b;
-		for (int j = a - 1 ; j < b ; ++j)
-			ans += arr[j];
-		cout << ans << "\n";
+		cout << arr[b] - arr[a - 1]<< "\n";
 	}
 }
 
