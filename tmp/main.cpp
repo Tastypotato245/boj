@@ -8,22 +8,14 @@ using namespace std;
 
 int	N;
 
-void Input()
-{
-	cin >> N;
-}
-
-void Output()
-{
-}
-
 void Solve()
 {
+	cin >> N;
 }
 
 int	main(void)
 {
 	ios::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
-	Input(); Solve(); Output();
+	Solve();
 	return (0);
 }
