@@ -2,17 +2,29 @@
 // github/Tastypotato245
 
 #include <iostream>
+#include <cctype>
 #include <algorithm>
-#include <string>
+#include <vector>
 
 using namespace std;
 
 int	N;
 int ans = -1;
+vector<int> v;
 
 void Solve()
 {
-	cin >> N;
+	char tmp;
+	int a = 0;
+	while (cin >> tmp)
+	{
+		if (isdigit(tmp))
+			a = a * 10 + tmp
+		else
+		{
+
+		}
+	}
 }
 
 int	main(void)
