@@ -48,22 +48,26 @@ void Solve()
 		if (m[col].size() == 2)
 		{
 			m[col].erase(row);
-			tmpVal[col] = max(tmpVal[col], totalVal[col] + val);
-			totalVal[col] = max(totalVal[col], val);
-			m[col].begin()->second += totalVal[col];
+			tmpVal[col] = max(tmpVal[col], totalVal[col] + totalVal[row] + val);
+			totalVal[col] = max(totalVal[col], totalVal[row] + val);
+			ans = max(ans, tmpVal[col]);
 			q.push({col, m[col].begin()->first, m[col].begin()->second});
 			m[row].clear();
 		}
 		else if (m[col].size() == 0 || m[col].size() == 1)
 		{
-			cout << max(tmpVal[col], totalVal[col] + val) << "\n";
+			tmpVal[col] = max(tmpVal[col], totalVal[col] + totalVal[row] + val);
+			totalVal[col] = max(totalVal[col], totalVal[row] + val);
+			ans = max(ans, tmpVal[col]);
+			cout << ans << "\n";
 			break ;
 		}
 		else
 		{
 			m[col].erase(row);
-			tmpVal[col] = max(tmpVal[col], totalVal[col] + val);
-			totalVal[col] = max(totalVal[col], val);
+			tmpVal[col] = max(tmpVal[col], totalVal[col] + totalVal[row] + val);
+			totalVal[col] = max(totalVal[col], totalVal[row] + val);
+			ans = max(ans, tmpVal[col]);
 		}
 	}
 }
