@@ -11,6 +11,7 @@ using namespace std;
 
 int	V, ans;
 int totalVal[100001];
+int tmpVal[100001];
 
 void Solve()
 {
@@ -44,25 +45,42 @@ void Solve()
 		col = get<1>(q.front());
 		val = get<2>(q.front());
 		q.pop();
-		if (m[col].size() != 0)
+		//long line node
+		if (m[col].size() == 2)
 		{
+			cout << "\t * 0col: " << col << "\n";
+			cout << "\t * 0val: " << val << "\n";
+			m[col].erase(row);
+			tmpVal[col] = max(tmpVal[col], totalVal[col] + val);
+			totalVal[col] = max(totalVal[col], val);
+			m[col].begin()->second += totalVal[col];
+			cout << "\t * m[col].begin()->second: " << m[col].begin()->second << "\n";
+			q.push({col, m[col].begin()->first, m[col].begin()->second});
+			m[row].clear();
+		}
+		else if (m[col].size() == 0)
+		{
+			cout << max(tmpVal[col], totalVal[col] + val) << "\n";
+			break ;
+		}
+		else if (m[col].size() == 1)
+		{
+			cout << "\t * 1col: " << col << "\n";
+			cout << "\t * 1val: " << val << "\n";
+			cout << max(tmpVal[col], totalVal[col] + val) << "\n";
+			break ;
+		}
+		else
+		{
+			cout << "\t * 2col: " << col << "\n";
+			cout << "\t * 2val: " << val << "\n";
 			totalVal[col] = max(totalVal[col], val);
 			m[col].erase(row);
 		}
-		if (m[col].size() == 0)
-		{
-			cout << val + totalVal[col] << "\n";
-			break ;
-		}
-		if (m[col].size() == 1)
-		{
-			m[col].begin()->second += totalVal[col];
-			q.push({col, m[col].begin()->first, m[col].begin()->second});
-			m[col].clear();
-		}
 	}
+	cout << "\n";
 	for (int i = 1 ; i <= V ; ++i)
-		cout << totalVal[col] << "\n";
+		cout << i << ": " << totalVal[i] << "\n";
 }
 
 int	main(void)
