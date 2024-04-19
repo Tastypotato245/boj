@@ -1,9 +1,9 @@
 // https://www.acmicpc.net/problem/11049
 // github/Tastypotato245
-
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <climits>
 
 using namespace std;
 
@@ -16,13 +16,15 @@ void Solve()
 	vector<pair<int, int> > v(N);
 	for (int i = 0 ; i < N ; ++i)
 		cin >> v[i].first >> v[i].second;
-	for (int i = 1 ; i < N ; ++i)
-	{
-		for (int j = i - 1 ; j >= 0 ; --j)
+	for (int x = 1 ; x < N ; ++x)
+		for (int y = x - 1 ; y >= 0 ; --y)
 		{
-			for (int k = 0 ; k ;)
+			dp[y][x] = INT_MAX;
+			for (int k = y ; k < x ; ++k)
+				dp[y][x] = min(dp[y][x],
+					dp[y][k] + dp[k + 1][x] + v[y].first * v[k].second * v[x].second);
 		}
-	}
+	cout << dp[0][N - 1] << "\n";
 }
 
 int	main(void)
