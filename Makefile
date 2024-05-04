@@ -3,7 +3,7 @@ NAME	=	algo
 SRCS	=	main.cpp
 
 CPP		=	c++
-CPPFLAG	=	-std=c++17
+CPPFLAG	=	-std=c++20
 RM		=	rm -f
 CP		=	cp tmp/main.cpp .
 MKDIR	=	mkdir $(D)
