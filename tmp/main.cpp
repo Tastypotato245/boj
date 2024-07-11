@@ -1,5 +1,5 @@
 // https://www.acmicpc.net/problem/
-// github/Tastypotato245
+// github/Tastypotato245/boj
 
 #include <iostream>
 #include <algorithm>
