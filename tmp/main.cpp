@@ -11,6 +11,7 @@ int	N;
 void Solve()
 {
 	cin >> N;
+
 }
 
 int	main(void)
