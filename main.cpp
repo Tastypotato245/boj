@@ -1,4 +1,4 @@
-// https://www.acmicpc.net/problem/2440
+// https://www.acmicpc.net/problem/
 // github/Tastypotato245/boj
 
 #include <iostream>
@@ -11,12 +11,6 @@ int	N;
 void Solve()
 {
 	cin >> N;
-	for (int j = 0 ; j < N ; ++j)
-	{
-		for (int i = j ; i < N ; ++i)
-			cout << "*";
-		cout << "\n";
-	}
 }
 
 int	main(void)
