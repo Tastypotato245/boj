@@ -1,6 +1,5 @@
 // https://www.acmicpc.net/problem/6064
 // github/Tastypotato245
-
 #include <iostream>
 #include <algorithm>
 
