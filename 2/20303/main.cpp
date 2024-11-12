@@ -37,6 +37,7 @@ void Solve()
 		queue<int> q;
 		if (vis[n])
 			continue ;
+		vis[n] = true;
 		q.push(n);
 		v.push_back({0, 0});
 		while (!q.empty())
@@ -44,7 +45,6 @@ void Solve()
 			int now = q.front();
 
 			q.pop();
-			vis[now] = true;	
 			v.back().first += 1;
 			v.back().second += candy[now];
 			for (int f : friends[now])
