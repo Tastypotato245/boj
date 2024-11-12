@@ -61,7 +61,7 @@ void Solve()
 		for (int j = K - 1 ; j >= v[i].first ; --j)
 			dp[j] = max(dp[j], dp[j - v[i].first] + v[i].second);
 
-	cout << *max_element(dp, dp + K) << "\n";
+	cout << dp[K - 1] << "\n";
 }
 
 int	main(void)
