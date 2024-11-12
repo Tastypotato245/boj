@@ -44,14 +44,15 @@ void Solve()
 			int now = q.front();
 
 			q.pop();
-			if (vis[now])
-				continue ;
 			vis[now] = true;	
 			v.back().first += 1;
 			v.back().second += candy[now];
 			for (int f : friends[now])
 				if (!vis[f])
+				{
+					vis[f] = true;	
 					q.push(f);
+				}
 		}
 	}
 
