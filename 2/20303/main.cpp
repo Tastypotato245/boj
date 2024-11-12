@@ -50,7 +50,8 @@ void Solve()
 			v.back().first += 1;
 			v.back().second += candy[now];
 			for (int f : friends[now])
-				q.push(f);
+				if (!vis[f])
+					q.push(f);
 		}
 	}
 
