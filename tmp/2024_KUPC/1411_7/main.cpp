@@ -6,25 +6,26 @@
 
 using namespace std;
 
-long long N;
-long long dp[100000001];
+long long N, ans;
 
 void Solve()
 {
 	cin >> N;
+	
+	long long ans = 0;
+	long long end_stage = 1;
+	long long start_stage = 0;
+	for (long long i = 2 ; i <= N ; ++i)
+	{
+		if (i % 4 == 1)
+			ans += start_stage++;
+		else if (i % 4 == 0)
+			ans += end_stage++;
+		else
+			ans += i / 4;
+	}
 
-	dp[1] = 0;
-	dp[2] = 0;
-	dp[3] = 0;
-	dp[4] = 1;
-	dp[5] = 1;
-	dp[6] = 2;
-	dp[7] = 3;
-	dp[8] = 5;
-	for (long long i = 9 ; i <= N ; ++i)
-		dp[i] = dp[i - 1] + ((i - 1) / 4);
-
-	cout << dp[N] << "\n";
+	cout << ans << "\n";
 }
 
 int	main(void)
