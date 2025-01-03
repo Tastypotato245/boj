@@ -12,6 +12,7 @@ void Solve()
 {
 	cin >> N;
 
+
 }
 
 int	main(void)
